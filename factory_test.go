@@ -5,6 +5,8 @@ import (
 	"encoding/xml"
 	"fmt"
 	"testing"
+
+	"../clouseau/reckon"
 )
 
 func Test(t *testing.T) {
@@ -13,6 +15,10 @@ func Test(t *testing.T) {
 	r, g, b, a := color.RGBA()
 
 	fmt.Printf("red: %v, green: %v, blue: %v, alpha %v\n", r, g, b, a)
+	reckon.That(r).Is.EqualTo(uint32(1))
+	reckon.That(g).Is.EqualTo(uint32(2))
+	reckon.That(b).Is.EqualTo(uint32(3))
+	reckon.That(a).Is.EqualTo(uint32(255))
 }
 
 func Test_xml(t *testing.T) {
@@ -28,4 +34,8 @@ func Test_xml(t *testing.T) {
 	r, g, b, a := color.RGBA()
 
 	fmt.Printf("red: %v, green: %v, blue: %v, alpha %v\n", r, g, b, a)
+	reckon.That(r).Is.EqualTo(uint32(1))
+	reckon.That(g).Is.EqualTo(uint32(2))
+	reckon.That(b).Is.EqualTo(uint32(3))
+	reckon.That(a).Is.EqualTo(uint32(255))
 }

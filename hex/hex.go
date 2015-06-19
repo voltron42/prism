@@ -33,5 +33,5 @@ func (h *HexColorFactory) getHex(id string, offset int) uint32 {
 	hex := strings.Split(id, "")
 	a := strings.Index(chars, hex[size+offset])
 	b := strings.Index(chars, hex[size+offset+1])
-	return uint32(a*256 + b)
+	return uint32(a*16 + b)
 }

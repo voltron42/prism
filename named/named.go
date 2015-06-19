@@ -3,6 +3,7 @@ package named
 import (
 	prism "../"
 	"image/color"
+	"strings"
 )
 
 const (
@@ -301,7 +302,7 @@ func NewFactory() prism.ColorFactory {
 }
 
 func (n *NamedColorFactory) GetColor(id string) color.Color {
-	c, ok := names[id]
+	c, ok := names[strings.ToLower(strings.Replace(id, " ", "", -1))]
 	if !ok {
 		return nil
 	}
